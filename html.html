@@ -34,11 +34,96 @@
     button:hover {
       background-color: #005f99;
     }
+
+    .form-container {
+      display: none;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .close-btn {
+      float: right;
+      cursor: pointer;
+      font-size: 20px;
+      color: #666;
+    }
+
+    .close-btn:hover {
+      color: #333;
+    }
   </style>
 </head>
 <body>
   <h1>Chào mừng bạn đến với trang web đơn giản</h1>
   <label>Danh sách liên hệ.</label>
-  <button>Thêm liên hệ</button>
+  <button onclick="showAddContactForm()">Thêm liên hệ</button>
+
+  <!-- Form thêm liên hệ mới -->
+  <div id="addContactForm" class="form-container">
+    <span class="close-btn" onclick="closeAddContactForm()">&times;</span>
+    <h2>Thêm Liên Hệ Mới</h2>
+    <div class="form-group">
+      <label for="fullName">Họ tên:</label>
+      <input type="text" id="fullName" name="fullName" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Số điện thoại:</label>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+    <button onclick="saveContact()">Lưu</button>
+  </div>
+
+  <script>
+    function showAddContactForm() {
+      document.getElementById('addContactForm').classList.add('show');
+    }
+
+    function closeAddContactForm() {
+      document.getElementById('addContactForm').classList.remove('show');
+    }
+
+    function saveContact() {
+      const fullName = document.getElementById('fullName').value;
+      const phone = document.getElementById('phone').value;
+      
+      if (fullName && phone) {
+        // Xử lý lưu thông tin liên hệ ở đây
+        alert('Đã lưu liên hệ thành công!');
+        closeAddContactForm();
+        // Reset form
+        document.getElementById('fullName').value = '';
+        document.getElementById('phone').value = '';
+      } else {
+        alert('Vui lòng điền đầy đủ thông tin!');
+      }
+    }
+  </script>
 </body>
 </html>
