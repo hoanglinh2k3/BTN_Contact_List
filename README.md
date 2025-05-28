@@ -4,8 +4,8 @@ Dự án quản lý danh sách liên hệ sử dụng Hắx ti em meomeo.
 
 ## Thành viên tham gia
 
-- Thành viên A: Nguyễn Hoàng Linh            - MSSV: 2280601725
-- Thành viên B: Trần Nguyễn Thiên PhướcPhước - MSSV: 2280613438
+- Thành viên A: Nguyễn Hoàng Linh       - MSSV: 2280601725
+- Thành viên B: Trần Nguyễn Thiên Phước - MSSV: 2280613438
 
 ## Mô tả dự án
 
